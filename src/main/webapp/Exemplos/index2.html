@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SAT - Sistema da Administração Tributária</title>
+
+<!-- Bootstrap 3.3.4 -->
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<!-- FontAwesome 4.3.0 -->
+<link href="font/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<style>
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #2D496E;
+}
+
+.containerGeral
+{position:absolute; width:100%; height:100%;padding:0px; margin:0px; overflow:hidden; border:0px; background: url(img/bgLogin.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;}
+
+input {
+	width: 100%;
+	border: 0px;
+	border-bottom: 2px solid #fff;
+ 	height 45px;
+	line-height: 35px;
+	color: #fff!important;
+	font-style:italic;
+	font-family: inherit;
+	font-size: 14px;
+	background: transparent;
+	transition: all .2s ease-in;
+	margin: 15px auto;
+	padding-left: 30px!important;
+	outline: none!important;
+}
+
+input:focus, input:hover {
+	width: 100%;
+	border: 0px;
+	border-bottom: 2px solid #99D8EA!important;
+ 	height 45px;
+	line-height: 35px;
+	color: #fff!important;
+	font-family: inherit;
+	font-style:italic;
+	font-size: 14px;
+	background: transparent;
+	margin: 15px auto;
+	padding-left: 40px!important;
+	outline: none!important;
+}
+
+
+.buttonArea{position:absolute; width:360px; height:100%;padding-left:15px; margin-top:230px; border:0px;}
+
+
+::-webkit-input-placeholder {
+ color: #F7F7F7;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+ color: #F7F7F7;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+ color: #F7F7F7;
+}
+
+:-ms-input-placeholder {
+ color: #F7F7F7;
+}
+
+.rightSide {
+	posititon: absolute;
+	width: 39%;
+	height: 100%;
+	display: inline-block;
+	background: rgba(45,73,110,0.8);
+	margin: 0px;
+	margin-right: -40px;
+	padding: 0px;
+	border: 0px;
+	border-left: 1px solid #337AB7;
+	border-right: 1px solid #337AB7;
+	margin-left:-4px; 
+    -webkit-box-shadow: -6px 1px 3px -5px rgba(0,0,0,0.32);
+    -moz-box-shadow: -6px 1px 3px -5px rgba(0,0,0,0.32);
+    box-shadow: -6px 1px 3px -5px rgba(0,0,0,0.32);  
+}
+.containerAcessar {
+	posititon: relative;
+	max-width: 380px;/*360px*/
+	height: 330px;/*250px*/
+	margin: 35% auto;
+	color: #fff;
+	border-top: 2px solid rgba(255,255,255,0.4);
+	border-bottom: 2px solid rgba(255,255,255,0.4);
+	border-radius:12px;	
+	/*background:rgba(238,238,238,0.15);
+	border-radius:12px;	
+	-webkit-box-shadow: 10px 9px 5px -8px rgba(0,0,0,0.32);
+	-moz-box-shadow: 10px 9px 5px -8px rgba(0,0,0,0.32);
+	box-shadow: 10px 9px 5px -8px rgba(0,0,0,0.32);*/
+}
+.titAcessar {
+	position: absolute;
+	width: 360px;
+	height: 100%;
+	padding: 0px;
+	margin: 20px 20px;
+	border: 0px;
+	font-family: inherit;
+	color: #fff;
+	font-size: 28px;
+	text-align: left;
+	font-weight: normal!important;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.containerForm {
+	position: absolute;
+	width: 360px;
+	height: 300px;
+	padding-left: 20px;
+	margin-top: 70px;
+	border: 0px;
+}
+.addbtn {
+	color: #fff!important;
+	border: 0px!important;
+	border-radius: 4px 4px 4px 4px!important;/*border-radius: 6px 0px 0px 6px!important;*/
+	outline: none!important;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	font-size:15px;
+	margin-left:32px!important;	
+}
+
+.addbtnright {
+	color: #fff!important;
+	border: 0px!important;
+	border-radius:  4px 4px 4px 4px!important;/*border-radius: 0px 6px 6px 0px!important;*/
+	outline: none!important;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	font-size:15px;	
+	margin-left:5px!important;
+}
+
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary
+{background-color:#3C89C8}
+
+
+label {
+	color: #fff!important;
+	vertical-align: middle!important;
+	margin: 25px 10px;
+}
+
+a:link{
+	color: #B4E1EF!important;
+	font: inherit!important;
+	font-weight: normal!important;
+	font-size: 12px!important;
+}
+a:link:hover, a:link:active, a:link:visited {
+	color: #B4E1EF;
+	font: inherit!important;
+	font-weight: normal!important;
+	font-size: 12px!important;
+}
+
+/*lado esquerdo*/
+.leftSide {
+	posititon: relative;
+	width: 60%;
+	height: 100%;
+	display: inline-block;
+	background-color: transparent;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	/*background: url(img/bgLogin.jpg) no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+}
+.containerLicitar {
+	posititon: relative;
+	width: 80%;
+	margin: 30% auto;
+	color: #fff;
+}
+.logo {
+	position: absolute;
+	padding: 0px;
+	margin: 40px 50px;
+	border: 0px;
+}
+
+
+.logoRight {
+	position: absolute;
+	padding: 0px;
+	margin: 40px 50px;
+	border: 0px;
+	display:none;
+}
+
+
+.titLicitar {
+	position: absolute;
+	width: 50%;
+	line-height:30px;
+	padding: 0px;
+	margin: 265px 60px;
+	border: 0px;
+	font-family: inherit;
+	color: #fff;
+	font-size: 32px;
+	font-weight: normal!important;
+	text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.subtitLicitar {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	padding: 0px;
+	margin: 300px 60px;
+	border: 0px;
+	font-family: inherit;
+	color: #fff;
+	font-size: 21px;
+	font-weight: normal!important;
+	text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.descricao {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	padding: 0px;
+	margin: 365px 60px;
+	border: 0px;
+	font-family: inherit;
+	color: #fff;
+	font-size: 14px;
+	font-weight: normal!important;
+	text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.ntc {
+	position: absolute;
+	width: 39%;
+	padding: 0px;
+	border: 0px;
+	text-align:center;
+}
+ @media screen and (max-width:1920px) {
+.ntc {
+	margin: -6% auto;
+}
+}
+
+ @media screen and (max-width:1024px) {
+.ntc {margin: 62% 60px;}
+.titLicitar{font-size: 29px;}
+.subtitLicitar {font-size: 21px;}
+
+}
+
+
+ @media screen and (max-width:800px) {
+.ntc {
+	margin: 62% 60px;
+}
+.titLicitar, .subtitLicitar, .descricao, .ntc, .logo, .leftSide  {
+	display:none!important;
+	width:39%;
+}
+.rightSide{
+	width:100%;
+	margin-left:1px;
+	}
+
+		
+.containerAcessar{
+	margin:23% auto!important;
+}
+.logoRight{
+	display:block;
+	position: absolute;
+	padding: 0px;
+	margin: 15px 40px;
+	border: 0px;
+}
+.logoRight img{
+	width:252px;
+	height:86px;
+}
+}
+
+a{color:#fff;}
+a:hover {
+	color: #A6C9E6!important;
+}
+a:visited {
+	color: #FFFFFF;
+}
+a:active {
+	color: #FFFFFF;
+}
+</style>
+</head>
+
+<body>
+<div class="containerGeral">
+  <div class="leftSide">
+    <div class="logo"><img src="img/logo-tocantins.png" /></div>
+    <div class="titLicitar">Secretaria da Fazenda de Tocantins</div>
+    <div class="subtitLicitar">Bem vindo ao <strong>SAT</strong> - Sistema da Administração Tributária</div>
+    <div class="descricao">O Sistema Tributário é formado pelas regras jurídicas que disciplinam o exercício do poder imposto pelos diversos órgãos públicos. O Sistema Tributário, tal como existe atualmente, foi criado buscando harmonizar as relações da sociedade de forma a se atender aos seus princípios fundamentais, como também de forma a se respeitar o pacto federativo sob o qual vivemos.
+
+É sabido que o conceito de tributo não é único, mas varia de acordo com diferentes perspectivas: histórica, política, social, econômica e jurídica, bem como em relação ao agente que dele faz uso.</div>
+    
+  </div>
+  <div class="rightSide">
+  <div class="logoRight"><img src="img/logo-tocantins.png" /></div>
+    <div class="containerAcessar">
+    
+      <div class="titAcessar">Acesso ao Sistema</div>
+      <div class="containerForm"> <i class="fa fa-user" style="display:inline-block; position:absolute; margin:26px 5px; "></i> <i class="fa fa-lock" style="display:inline-block; position:absolute; margin:95px 5px;"></i>
+        <input type="text" placeholder="Informe o CPF ou Usuário" class="classe_form_1" />
+        <input type="password"  placeholder="Informe sua Senha" class="classe_form_1" />
+      </div>
+      <div class="buttonArea">
+        <button class="btn btn-lg btn-primary pull-left addbtn"  onClick="parent.location = 'listaReceitas.html'" >Entrar</button>
+        <button class="btn btn-lg btn-success pull-left addbtnright"  onClick="parent.location = 'listaReceitas.html'" >Entrar com Certificação Digital</button>
+        <label class="pull-right"><i></i><a href="#" class="link">Lembrar a Senha</a></label>
+        <label class="pull-right"><i></i><a href="#" class="link">Cadastre-se Aqui</a></label>
+      </div>
+    </div>
+    <div class="ntc"><img src="img/logoNTC.png" /></div>
+  </div>
+</div>
+</div>
+<script>
+var inputs = document.getElementsByTagName('input');
+for(var i = 0; i < inputs.length; i++){
+  var input = inputs[i];
+  input.addEventListener('focus', function(){
+    var place = this.getAttribute('placeholder');
+    this.setAttribute('placeholder', '');
+    var blur = function(){
+      this.setAttribute('placeholder', place);
+    }
+    this.addEventListener('blur', blur);
+  });
+}
+</script>
+</body>
+</html>

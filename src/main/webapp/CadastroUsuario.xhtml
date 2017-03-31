@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Usuário</title>
+</h:head>
+<h:body>
+	<p:growl id="mensagem" />
+	<div id="top"></div>
+
+
+	<p:panel header="Usuarios - Listagem">
+		<h:form id="formCadastro">
+			<h:panelGrid id="painel" columns="2">
+				<p:outputLabel value="Nome:" />
+				<p:inputText maxlength="50" size="30"
+					value="#{usuarioBean.usuario.nome}" />
+					
+				<p:outputLabel value="Email:" />
+				<p:inputText maxlength="50" size="30" value="#{usuarioBean.usuario.email}" />
+					
+				<p:outputLabel value="Usuario:" />
+				<p:inputText maxlength="50" size="30"
+					value="#{usuarioBean.usuario.nomeUsuario}" />
+					
+				<p:outputLabel value="Senha:" />
+				<p:password maxlength="50" size="30"
+					value="#{usuarioBean.usuario.senha}" />
+					
+				<p:outputLabel value="Endereço:" />
+				<p:inputText maxlength="50" size="30"
+					value="#{usuarioBean.usuario.endereco}" />
+					
+				<p:outputLabel value="Telefone:" />
+				<p:inputText maxlength="50" size="30"
+					value="#{usuarioBean.usuario.telefone}" />					
+
+
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+				<p:commandButton value="Salvar"
+					actionListener="#{usuarioBean.salvar}"
+					update=":mensagem :formCadastro:painel" />
+				<p:commandButton value="Fechar" oncomplete="PF('dialogo').hide();" />
+			</h:panelGrid>
+		</h:form>
+	</p:panel>
+</h:body>
+</html>
